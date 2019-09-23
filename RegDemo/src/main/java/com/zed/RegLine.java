@@ -53,7 +53,7 @@ public class RegLine {
 
             if (matcher_requestId.find())
                 System.out.println("requestId: " + matcher_requestId.group());
-            if (lineCount %2 == 0 && matcher_requestArg.find()) {
+            if ((lineCount &1) == 0 && matcher_requestArg.find()) {
                 String target_str_request = matcher_requestArg.group();
                 int end = target_str_request.indexOf("access");
                 String substring = target_str_request.substring(0, end);
